@@ -1,6 +1,36 @@
 @baseUrl= http://localhost:5110
 
+// Get Books
 GET {{baseUrl}}/books
-Accept: application/json
+Content-Type: application/json
+
+{
+  "PageNumber": 1,
+  "PageSize": 10
+}
+
+###
+
+// Get Book by Id
+GET {{baseUrl}}/book/1786b09f-570b-44a2-9bda-e58a838d7d7c
+Content-Type: application/json
+
+###
+
+// Create Book
+POST {{baseUrl}}/book
+Content-Type: application/json
+
+{
+  "Author":"Test_Author",
+  "Title":"Test_Title",
+  "Price":5.2
+}
+
+###
+
+// Delete Book
+DELETE {{baseUrl}}/book/1786b09f-570b-44a2-9bda-e58a838d7d7c
+Content-Type: application/json
 
 ###
