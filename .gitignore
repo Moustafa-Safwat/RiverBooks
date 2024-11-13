@@ -2,12 +2,20 @@
 *.editorConfig
 *.cache
 
-# Ignore Visual Studio files
+# Ignore Visual Studio specific files and folders
 .vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
 # Ignore build output folders
 bin/
 obj/
 
-# Ignore GitHub workflows (if you don’t need them in version control)
-.github/
+# Ignore other temporary or cache files
+*.log
+*.tlog
+*.cache
+
+# Ignore any other unwanted files or directories
