@@ -1,0 +1,13 @@
+# Ignore .editorConfig and .cache files
+*.editorConfig
+*.cache
+
+# Ignore Visual Studio files
+.vs/
+
+# Ignore build output folders
+bin/
+obj/
+
+# Ignore GitHub workflows (if you don’t need them in version control)
+.github/
