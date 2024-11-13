@@ -1,0 +1,6 @@
+@baseUrl= http://localhost:5110
+
+GET {{baseUrl}}/books
+Accept: application/json
+
+###

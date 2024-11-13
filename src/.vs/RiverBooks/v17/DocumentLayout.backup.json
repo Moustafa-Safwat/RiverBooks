@@ -1,0 +1,83 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ITI\\BackEnd\\Modular Monolith Architecture\\Steve \u201Cardalis\u201D Smith\\Dometrain - Getting Started Modular Monoliths in .NET 2024-6\\Test_Code\\src\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{10B1298F-089D-40F5-9BFB-61F3477A5A89}|RiverBooks.Book\\RiverBooks.Book.csproj|d:\\iti\\backend\\modular monolith architecture\\steve \u201Cardalis\u201D smith\\dometrain - getting started modular monoliths in .net 2024-6\\test_code\\src\\riverbooks.book\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10B1298F-089D-40F5-9BFB-61F3477A5A89}|RiverBooks.Book\\RiverBooks.Book.csproj|solutionrelative:riverbooks.book\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10B1298F-089D-40F5-9BFB-61F3477A5A89}|RiverBooks.Book\\RiverBooks.Book.csproj|d:\\iti\\backend\\modular monolith architecture\\steve \u201Cardalis\u201D smith\\dometrain - getting started modular monoliths in .net 2024-6\\test_code\\src\\riverbooks.book\\guardclausesextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10B1298F-089D-40F5-9BFB-61F3477A5A89}|RiverBooks.Book\\RiverBooks.Book.csproj|solutionrelative:riverbooks.book\\guardclausesextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{24FFBE8D-8421-4D6E-A184-E0E4D39C6A0A}|RiverBooks.Web\\RiverBooks.Web.csproj|d:\\iti\\backend\\modular monolith architecture\\steve \u201Cardalis\u201D smith\\dometrain - getting started modular monoliths in .net 2024-6\\test_code\\src\\riverbooks.web\\riverbooks.web.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{24FFBE8D-8421-4D6E-A184-E0E4D39C6A0A}|RiverBooks.Web\\RiverBooks.Web.csproj|solutionrelative:riverbooks.web\\riverbooks.web.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 201,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 230,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GuardClausesExtensions.cs",
+              "DocumentMoniker": "D:\\ITI\\BackEnd\\Modular Monolith Architecture\\Steve \u201Cardalis\u201D Smith\\Dometrain - Getting Started Modular Monoliths in .NET 2024-6\\Test_Code\\src\\RiverBooks.Book\\GuardClausesExtensions.cs",
+              "RelativeDocumentMoniker": "RiverBooks.Book\\GuardClausesExtensions.cs",
+              "ToolTip": "D:\\ITI\\BackEnd\\Modular Monolith Architecture\\Steve \u201Cardalis\u201D Smith\\Dometrain - Getting Started Modular Monoliths in .NET 2024-6\\Test_Code\\src\\RiverBooks.Book\\GuardClausesExtensions.cs",
+              "RelativeToolTip": "RiverBooks.Book\\GuardClausesExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T20:43:27.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\ITI\\BackEnd\\Modular Monolith Architecture\\Steve \u201Cardalis\u201D Smith\\Dometrain - Getting Started Modular Monoliths in .NET 2024-6\\Test_Code\\src\\RiverBooks.Book\\Book.cs",
+              "RelativeDocumentMoniker": "RiverBooks.Book\\Book.cs",
+              "ToolTip": "D:\\ITI\\BackEnd\\Modular Monolith Architecture\\Steve \u201Cardalis\u201D Smith\\Dometrain - Getting Started Modular Monoliths in .NET 2024-6\\Test_Code\\src\\RiverBooks.Book\\Book.cs",
+              "RelativeToolTip": "RiverBooks.Book\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T20:37:48.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RiverBooks.Web.http",
+              "DocumentMoniker": "D:\\ITI\\BackEnd\\Modular Monolith Architecture\\Steve \u201Cardalis\u201D Smith\\Dometrain - Getting Started Modular Monoliths in .NET 2024-6\\Test_Code\\src\\RiverBooks.Web\\RiverBooks.Web.http",
+              "RelativeDocumentMoniker": "RiverBooks.Web\\RiverBooks.Web.http",
+              "ToolTip": "D:\\ITI\\BackEnd\\Modular Monolith Architecture\\Steve \u201Cardalis\u201D Smith\\Dometrain - Getting Started Modular Monoliths in .NET 2024-6\\Test_Code\\src\\RiverBooks.Web\\RiverBooks.Web.http",
+              "RelativeToolTip": "RiverBooks.Web\\RiverBooks.Web.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-11-11T18:08:27.661Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
