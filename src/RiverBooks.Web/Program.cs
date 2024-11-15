@@ -1,4 +1,4 @@
-using FastEndpoints;
+﻿using FastEndpoints;
 using RiverBooks.Book.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Register Books Services
-builder.Services.RegisterBookServices();
+builder.Services.RegisterBookServices(builder.Configuration);
 builder.Services.AddFastEndpoints();
 
 var app = builder.Build();

@@ -4,5 +4,6 @@ internal record BookDto(
     Guid Id,
     string Title,
     string Author,
-    decimal Price
-    );
+    decimal Price,
+    byte[]? RowVersion = null
+);

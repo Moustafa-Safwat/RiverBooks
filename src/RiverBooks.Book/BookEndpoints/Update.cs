@@ -27,7 +27,7 @@ internal class Update(IBookService bookService)
   /// <returns>A task that represents the asynchronous operation.</returns>
   public async override Task HandleAsync(UpdateBookRequest req, CancellationToken ct)
   {
-    var bookDto = new BookDto(req.Id, req.Title, req.Author, req.Price);
+    var bookDto = new BookDto(req.Id, req.Title, req.Author, req.Price,req.RowVersion);
     await bookService.UpdateBookAsync(bookDto, ct);
     await SendCreatedAtAsync<GetById>(new { req.Id }, bookDto);
   }

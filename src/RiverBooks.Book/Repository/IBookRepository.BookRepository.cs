@@ -8,31 +8,31 @@ using RiverBooks.Models;
 /// </summary>
 internal class BookRepository : IBookRepository
 {
-    /// <summary>
-    /// A collection of books.
-    /// </summary>
-    private static readonly IList<Book> _books;
+  /// <summary>
+  /// A collection of books.
+  /// </summary>
+  private static readonly IList<Book> _books;
 
-    /// <summary>
-    /// Static constructor to initialize the book repository.
-    /// </summary>
-    static BookRepository()
-    {
-        _books = SeedBooksData().ToList();
-    }
+  /// <summary>
+  /// Static constructor to initialize the book repository.
+  /// </summary>
+  static BookRepository()
+  {
+    _books = SeedBooksData().ToList();
+  }
 
-    /// <summary>
-    /// Seeds the initial data for the book repository.
-    /// </summary>
-    /// <returns>An enumerable collection of books.</returns>
-    private static IEnumerable<Book> SeedBooksData()
-    {
-        yield return new(Guid.Parse("11111111-1111-1111-1111-111111111111"), "The Great Gatsby", "F. Scott Fitzgerald", 10.99m);
-        yield return new(Guid.Parse("22222222-2222-2222-2222-222222222222"), "1984", "George Orwell", 8.99m);
-        yield return new(Guid.Parse("33333333-3333-3333-3333-333333333333"), "To Kill a Mockingbird", "Harper Lee", 12.99m);
-        yield return new(Guid.Parse("44444444-4444-4444-4444-444444444444"), "Pride and Prejudice", "Jane Austen", 9.99m);
-        yield return new(Guid.Parse("55555555-5555-5555-5555-555555555555"), "The Catcher in the Rye", "J.D. Salinger", 11.99m);
-    }
+  /// <summary>
+  /// Seeds the initial data for the book repository.
+  /// </summary>
+  /// <returns>An enumerable collection of books.</returns>
+  private static IEnumerable<Book> SeedBooksData()
+  {
+    yield return new(Guid.Parse("11111111-1111-1111-1111-111111111111"), "The Great Gatsby", "F. Scott Fitzgerald", 10.99m,[]);
+    yield return new(Guid.Parse("22222222-2222-2222-2222-222222222222"), "1984", "George Orwell", 8.99m,[]);
+    yield return new(Guid.Parse("33333333-3333-3333-3333-333333333333"), "To Kill a Mockingbird", "Harper Lee", 12.99m,[]);
+    yield return new(Guid.Parse("44444444-4444-4444-4444-444444444444"), "Pride and Prejudice", "Jane Austen", 9.99m,[]);
+    yield return new(Guid.Parse("55555555-5555-5555-5555-555555555555"), "The Catcher in the Rye", "J.D. Salinger", 11.99m,[]);
+  }
 
   /// <summary>
   /// Checks if the cancellation token has requested cancellation.

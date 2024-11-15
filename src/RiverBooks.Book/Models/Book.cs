@@ -1,4 +1,5 @@
 ﻿using Ardalis.GuardClauses;
+using RiverBooks.Book.Models;
 
 #pragma warning disable IDE0130
 namespace RiverBooks.Models;
@@ -8,13 +9,8 @@ namespace RiverBooks.Models;
 /// <summary>
 /// Represents a book with an ID, title, author, and price.
 /// </summary>
-internal class Book
+internal class Book : BaseEntity
 {
-  /// <summary>
-  /// Gets the unique identifier for the book.
-  /// </summary>
-  public Guid Id { get; private set; }
-
   /// <summary>
   /// Gets the title of the book.
   /// </summary>
@@ -37,12 +33,13 @@ internal class Book
   /// <param name="title">The title of the book.</param>
   /// <param name="author">The author of the book.</param>
   /// <param name="price">The price of the book.</param>
-  public Book(Guid id, string title, string author, decimal price)
+  public Book(Guid id, string title, string author, decimal price, byte[] rowVersion)
   {
     Id = Guard.Against.Default(id);
     Title = ValidateTitle(title);
     Author = ValidateAuthor(author);
     Price = ValidatePrice(price);
+    RowVersion = Guard.Against.Null(rowVersion);
   }
 
   /// <summary>

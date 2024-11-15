@@ -10,9 +10,9 @@ Content-Type: application/json
 }
 
 ###
-
+@bookId = a89f6cd7-4693-457b-9009-02205dbbfe45
 // Get Book by Id
-GET {{baseUrl}}/book/11111111-1111-1111-1111-111111111111
+GET {{baseUrl}}/book/{{bookId}}
 Content-Type: application/json
 
 ###
@@ -30,7 +30,7 @@ Content-Type: application/json
 ###
 
 // Delete Book
-DELETE {{baseUrl}}/book/1786b09f-570b-44a2-9bda-e58a838d7d7c
+DELETE {{baseUrl}}/book/0c6d98c0-91cb-461b-9b5f-12ba2e729df3
 Content-Type: application/json
 
 ###
@@ -40,19 +40,20 @@ PUT {{baseUrl}}/book
 Content-Type: application/json
 
 {
-      "id": "11111111-1111-1111-1111-111111111111",
+      "id": "{{bookId}}",
       "title": "The Great Gatsby - Updated",
       "author": "F. Scott Fitzgerald - Updated",
-      "price": 10.99
+      "price": 10.99,
+      "rowVersion": "AAAAAAAAB9c="
 }
 
 ###
 
 // Update Book Price
-PATCH {{baseUrl}}/book/11111111-1111-1111-1111-111111111111/pricehistory
+PATCH {{baseUrl}}/book/{{bookId}}/pricehistory
 Content-Type: application/json
 
 {
-  "newPrice": 5.2
+  "newPrice": 5.27
 }
 
