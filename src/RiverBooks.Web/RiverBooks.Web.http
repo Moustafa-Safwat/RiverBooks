@@ -34,3 +34,25 @@ DELETE {{baseUrl}}/book/1786b09f-570b-44a2-9bda-e58a838d7d7c
 Content-Type: application/json
 
 ###
+
+// Update Book
+PUT {{baseUrl}}/book
+Content-Type: application/json
+
+{
+      "id": "11111111-1111-1111-1111-111111111111",
+      "title": "The Great Gatsby - Updated",
+      "author": "F. Scott Fitzgerald - Updated",
+      "price": 10.99
+}
+
+###
+
+// Update Book Price
+PATCH {{baseUrl}}/book/11111111-1111-1111-1111-111111111111/pricehostory
+Content-Type: application/json
+
+{
+  "newPrice": 5.2
+}
+
