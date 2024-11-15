@@ -10,23 +10,29 @@ namespace RiverBooks.Book.BookEndpoints;
 internal class UpdatePrice(IBookService bookService)
   : Endpoint<UpdateBookPriceRequest, BookDto>
 {
-    /// <summary>
-    /// Configures the endpoint settings.
-    /// </summary>
-    public override void Configure()
-    {
-        Patch("/book/{id}/pricehostory");
-        AllowAnonymous();
-    }
+  /// <summary>
+  /// Configures the endpoint settings.
+  /// </summary>
+  public override void Configure()
+  {
+    Patch("/book/{id}/pricehistory");
+    AllowAnonymous();
+  }
 
-    /// <summary>
-    /// Handles the request to update the book price.
-    /// </summary>
-    /// <param name="req">The request containing the book ID and new price.</param>
-    /// <param name="ct">Cancellation token.</param>
-    public override async Task HandleAsync(UpdateBookPriceRequest req, CancellationToken ct)
+  /// <summary>
+  /// Handles the request to update the book price.
+  /// </summary>
+  /// <param name="req">The request containing the book ID and new price.</param>
+  /// <param name="ct">Cancellation token.</param>
+  public override async Task HandleAsync(UpdateBookPriceRequest req, CancellationToken ct)
+  {
+    await bookService.UpdateBookPrice(req.Id, req.NewPrice, ct);
+    var updatedBook = await bookService.GetBookByIdAsync(req.Id, ct);
+    if (updatedBook is null)
     {
-        await bookService.UpdateBookPrice(req.Id, req.NewPrice, ct);
-        await SendNoContentAsync();
+      await SendErrorsAsync();
+      return;
     }
+    await SendAsync(updatedBook);
+  }
 }

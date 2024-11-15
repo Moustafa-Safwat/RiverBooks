@@ -33,8 +33,7 @@ internal class BookService(IBookRepository bookRepository) : IBookService
   {
     var result = bookRepository.GetAllBooksAsync(pageNumber, pageSize, cancellationToken)
       .Result
-      .Select(book => new BookDto(book.Id, book.Title, book.Author, book.Price))
-      .ToList();
+      .Select(book => new BookDto(book.Id, book.Title, book.Author, book.Price));
     return Task.FromResult(result.AsQueryable());
   }
 
