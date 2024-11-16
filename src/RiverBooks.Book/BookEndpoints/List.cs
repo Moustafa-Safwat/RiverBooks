@@ -1,9 +1,7 @@
 ﻿using FastEndpoints;
 using RiverBooks.Book.Services;
 
-#pragma warning disable IDE0130
-namespace RiverBooks.Book;
-#pragma warning restore IDE0130
+namespace RiverBooks.Book.BookEndpoints;
 
 /// <summary>
 /// Endpoint to handle the retrieval of all books.
