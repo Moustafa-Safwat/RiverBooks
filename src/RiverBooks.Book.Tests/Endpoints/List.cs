@@ -19,7 +19,7 @@ public class List(Fixture fixture) : TestBase<Fixture>
     books!.Books.Should().NotBeEmpty();
   }
 
-  [Fact]
+  [Fact,Priority(1)]
     public async Task ReturnsEmptyListWhenNoBooksAsync()
     {
         using var scope = fixture.Services.CreateScope();
