@@ -15,11 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiverBooks.Book.Tests", "RiverBooks.Book.Tests\RiverBooks.Book.Tests.csproj", "{329BE2C2-F080-4ECE-BDB5-12312A6808A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiverBooks.User", "RiverBooks.User\RiverBooks.User.csproj", "{BB892F97-303B-4514-B215-8743215FBAF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiverBooks.User", "RiverBooks.User\RiverBooks.User.csproj", "{BB892F97-303B-4514-B215-8743215FBAF9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Book Module", "Book Module", "{D8262591-0160-4083-9141-C407FC121080}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User Module", "User Module", "{2C13BC29-00FE-4E8B-A9BC-856EEEB5B45E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiverBooks.USer.Tests", "RiverBooks.User.Tests\RiverBooks.USer.Tests.csproj", "{DF04AB54-A112-45FB-BDBC-1473C724ECAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +54,12 @@ Global
 		{BB892F97-303B-4514-B215-8743215FBAF9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB892F97-303B-4514-B215-8743215FBAF9}.Testing|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB892F97-303B-4514-B215-8743215FBAF9}.Testing|Any CPU.Build.0 = Debug|Any CPU
+		{DF04AB54-A112-45FB-BDBC-1473C724ECAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF04AB54-A112-45FB-BDBC-1473C724ECAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF04AB54-A112-45FB-BDBC-1473C724ECAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF04AB54-A112-45FB-BDBC-1473C724ECAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF04AB54-A112-45FB-BDBC-1473C724ECAC}.Testing|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF04AB54-A112-45FB-BDBC-1473C724ECAC}.Testing|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,7 @@ Global
 		{10B1298F-089D-40F5-9BFB-61F3477A5A89} = {D8262591-0160-4083-9141-C407FC121080}
 		{329BE2C2-F080-4ECE-BDB5-12312A6808A8} = {D8262591-0160-4083-9141-C407FC121080}
 		{BB892F97-303B-4514-B215-8743215FBAF9} = {2C13BC29-00FE-4E8B-A9BC-856EEEB5B45E}
+		{DF04AB54-A112-45FB-BDBC-1473C724ECAC} = {2C13BC29-00FE-4E8B-A9BC-856EEEB5B45E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF1C5095-914E-45BB-9235-72FFD00CF332}

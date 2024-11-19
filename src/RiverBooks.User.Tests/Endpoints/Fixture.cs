@@ -1,6 +1,7 @@
 ﻿using FastEndpoints.Testing;
 
-namespace RiverBooks.Book.Tests.Endpoints;
+namespace RiverBooks.USer.Tests.Endpoints;
+
 /// <summary>
 /// Represents a fixture for setting up and tearing down test resources for the RiverBooks.Book endpoints.
 /// </summary>
