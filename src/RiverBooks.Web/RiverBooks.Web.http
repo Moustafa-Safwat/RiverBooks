@@ -57,3 +57,18 @@ Content-Type: application/json
   "newPrice": 5.27
 }
 
+###
+
+// Create User
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "userName":"Test_User",
+  "email":"Test_User@gmail.com",
+  "password":"User.123",
+  "role":"Visitor"
+}
+
+###
+

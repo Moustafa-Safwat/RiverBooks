@@ -19,6 +19,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\RiverBooks.Book\RiverBooks.Book.csproj" />
+		<ProjectReference Include="..\RiverBooks.User\RiverBooks.User.csproj" />
 	</ItemGroup>
 
 </Project>
