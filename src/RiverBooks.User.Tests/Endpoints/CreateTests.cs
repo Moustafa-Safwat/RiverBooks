@@ -8,7 +8,7 @@ using RiverBooks.USer.Tests.Endpoints;
 
 namespace RiverBooks.User.Tests.Endpoints;
 
-public class Create(Fixture fixture) : TestBase<Fixture>
+public class CreateTests(Fixture fixture) : TestBase<Fixture>
 {
   [Fact]
   public async Task CreateUser_SuccessAsync()

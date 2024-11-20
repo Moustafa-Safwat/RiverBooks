@@ -72,3 +72,12 @@ Content-Type: application/json
 
 ###
 
+// Login User
+POST {{baseUrl}}/user/login
+Content-Type: application/json
+
+{
+  "email":"Test_User@gmail.com",
+  "password":"User.123"
+}
+
