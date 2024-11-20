@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Book Module", "Book Module"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User Module", "User Module", "{2C13BC29-00FE-4E8B-A9BC-856EEEB5B45E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiverBooks.USer.Tests", "RiverBooks.User.Tests\RiverBooks.USer.Tests.csproj", "{DF04AB54-A112-45FB-BDBC-1473C724ECAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RiverBooks.User.Tests", "RiverBooks.User.Tests\RiverBooks.User.Tests.csproj", "{DF04AB54-A112-45FB-BDBC-1473C724ECAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

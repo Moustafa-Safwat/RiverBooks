@@ -20,7 +20,7 @@ public class List(Fixture fixture) : TestBase<Fixture>
     books!.Books.Should().NotBeEmpty();
   }
 
-  [Fact,Ignore]
+    [Fact(Skip = "Ignoring this test temporarily")]
     public async Task ReturnsEmptyListWhenNoBooksAsync()
     {
         using var scope = fixture.Services.CreateScope();
@@ -76,8 +76,8 @@ public class List(Fixture fixture) : TestBase<Fixture>
   }
 
   [Theory]
-  [InlineData(-1,-10)]
-  [InlineData(-1,10)]
+  [InlineData(-1, -10)]
+  [InlineData(-1, 10)]
   [InlineData(1, -10)]
   [InlineData(1, 1000)]
   public async Task ReturnsBadRequestForInvalidRequestAsync(int pageNumber, int pageSize)

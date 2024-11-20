@@ -10,51 +10,57 @@ namespace RiverBooks.User.Tests.Endpoints;
 
 public class Create(Fixture fixture) : TestBase<Fixture>
 {
-    [Fact]
-    public async Task CreateUser_SuccessAsync()
+  [Fact]
+  public async Task CreateUser_SuccessAsync()
+  {
+    // Arrange
+    var userManager = fixture.Services.GetRequiredService<UserManager<IdentityUser>>();
+    var existingUser = await userManager.FindByNameAsync("testuser");
+    if (existingUser != null)
     {
-        // Arrange
-        var request = new CreateUserRequest("testuser", "testuser@example.com", "Password123!", "User");
-
-        // Act
-        var result = await fixture.Client.POSTAsync<UserEndpoints.Create, CreateUserRequest, object>(request);
-        var responseBody = await result.Response.Content.ReadAsStringAsync();
-        var user = await fixture.Services.GetRequiredService<UserManager<IdentityUser>>().FindByNameAsync(request.UserName);
-
-        // Assert
-        result.Response.EnsureSuccessStatusCode();
-        user.Should().NotBeNull();
-        (await fixture.Services.GetRequiredService<UserManager<IdentityUser>>().CheckPasswordAsync(user!, request.Password)).Should().BeTrue();
-        (await fixture.Services.GetRequiredService<UserManager<IdentityUser>>().IsInRoleAsync(user!, request.Role)).Should().BeTrue();
+      await userManager.DeleteAsync(existingUser);
     }
 
-    [Fact]
-    public async Task CreateUser_Failure_UserAlreadyExistsAsync()
-    {
-        // Arrange
-        var userManager = fixture.Services.GetRequiredService<UserManager<IdentityUser>>();
-        var existingUser = new IdentityUser { UserName = "existinguser", Email = "existinguser@example.com" };
-        await userManager.CreateAsync(existingUser, "Password123!");
+    var request = new CreateUserRequest("testuser", "testuser@example.com", "Password123!", "User");
 
-        var request = new CreateUserRequest("existinguser", "existinguser@example.com", "Password123!", "User");
+    // Act
+    var result = await fixture.Client.POSTAsync<UserEndpoints.Create, CreateUserRequest, object>(request);
+    var user = await userManager.FindByNameAsync(request.UserName);
 
-        // Act
-        var result = await fixture.Client.POSTAsync<UserEndpoints.Create, CreateUserRequest, object>(request);
+    // Assert
+    result.Response.EnsureSuccessStatusCode();
+    user.Should().NotBeNull();
+    (await userManager.CheckPasswordAsync(user!, request.Password)).Should().BeTrue();
+    (await userManager.IsInRoleAsync(user!, request.Role)).Should().BeTrue();
+  }
 
-        // Assert
-        result.Response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
-    }
+  [Fact]
+  public async Task CreateUser_Failure_UserAlreadyExistsAsync()
+  {
+    // Arrange
+    var userManager = fixture.Services.GetRequiredService<UserManager<IdentityUser>>();
+    var existingUser = new IdentityUser { UserName = "existinguser", Email = "existinguser@example.com" };
+    await userManager.CreateAsync(existingUser, "Password123!");
 
-    [Fact]
-    public async Task CreateUser_Failure_InvalidRoleAsync()
-    {
-        // Arrange
-        var request = new CreateUserRequest("newuser", "newuser@example.com", "Password123!", "InvalidRole");
+    var request = new CreateUserRequest("existinguser", "existinguser@example.com", "Password123!", "User");
 
-        // Act
-        var result = await fixture.Client.POSTAsync<UserEndpoints.Create, CreateUserRequest, object>(request);
+    // Act
+    var result = await fixture.Client.POSTAsync<UserEndpoints.Create, CreateUserRequest, object>(request);
 
-        // Assert
-        result.Response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
-    }
+    // Assert
+    result.Response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
+  }
+
+  [Fact]
+  public async Task CreateUser_Failure_InvalidRoleAsync()
+  {
+    // Arrange
+    var request = new CreateUserRequest("newuser", "newuser@example.com", "Password123!", "InvalidRole");
+
+    // Act
+    var result = await fixture.Client.POSTAsync<UserEndpoints.Create, CreateUserRequest, object>(request);
+
+    // Assert
+    result.Response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
+  }
 }
