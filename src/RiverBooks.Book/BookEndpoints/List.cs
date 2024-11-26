@@ -29,3 +29,4 @@ internal class List(IBookService bookService)
     await SendAsync(new(books.ToList()));
   }
 }
+

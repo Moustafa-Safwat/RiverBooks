@@ -12,6 +12,7 @@
 # Ignore build output folders
 bin/
 obj/
+Logs/
 
 # Ignore other temporary or cache files
 *.log

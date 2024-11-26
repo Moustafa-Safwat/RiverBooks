@@ -2,6 +2,7 @@
 using FastEndpoints.Security;
 using RiverBooks.Book.Configurations;
 using RiverBooks.User.Configurations;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,12 +20,19 @@ builder.Services.RegisterBookServices(builder.Configuration)
                 .AddSwaggerGen()
                 .AddFastEndpoints();
 
+builder.Host.UseSerilog((context, configuration) =>
+  configuration.ReadFrom.Configuration(context.Configuration));
+
 
 var app = builder.Build();
+
+app.UseSerilogRequestLogging(); // Automatic HTTP requests logging
+
 if (app.Environment.IsDevelopment())
 {
   app.UseSwagger();
   app.UseSwaggerUI();
+  app.UseDeveloperExceptionPage();
 }
 
 if (app.Environment.EnvironmentName == "Testing")
