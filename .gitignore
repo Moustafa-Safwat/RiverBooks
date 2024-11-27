@@ -20,3 +20,6 @@ Logs/
 *.cache
 
 # Ignore any other unwanted files or directories
+
+# Execlude files to be added
+!RiverBooks.User
