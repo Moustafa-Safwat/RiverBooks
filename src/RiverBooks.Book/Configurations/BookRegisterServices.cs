@@ -11,7 +11,8 @@ namespace RiverBooks.Book.Configurations;
 public static class BookRegisterServices
 {
   public static IServiceCollection RegisterBookServices(this IServiceCollection service,
-    ConfigurationManager configuration)
+    ConfigurationManager configuration,
+    IList<System.Reflection.Assembly> assemblies)
   {
     service.AddScoped<IBookRepository, EFBookRepository>();
     service.AddScoped<IBookService, BookService>();
@@ -19,6 +20,7 @@ public static class BookRegisterServices
     {
       options.UseSqlServer(configuration.GetConnectionString("RiverBooksCS"));
     });
+    assemblies.Add(typeof(BookRegisterServices).Assembly);
     return service;
   }
 }

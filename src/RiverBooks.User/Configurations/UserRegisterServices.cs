@@ -2,21 +2,22 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using RiverBooks.User.Data;
+using RiverBooks.User.Repository;
 
 namespace RiverBooks.User.Configurations;
 public static class UserRegisterServices
 {
   public static IServiceCollection RegisterUserServices(this IServiceCollection services,
-    ConfigurationManager configuration)
+    ConfigurationManager configuration,
+    IList<System.Reflection.Assembly> assemblies)
   {
     services.AddDbContext<UserDbContext>(options =>
     {
       options.UseSqlServer(configuration.GetConnectionString("RiverBooksUsersCS"));
     });
 
-    services.AddIdentity<IdentityUser, IdentityRole>(options =>
+    services.AddIdentity<ApplicationUser, IdentityRole>(options =>
     {
       options.User.RequireUniqueEmail = true;
 
@@ -30,6 +31,8 @@ public static class UserRegisterServices
       .AddEntityFrameworkStores<UserDbContext>();
 
     services.AddScoped<IUnitOfWork, UnitOfWork>();
+    services.AddScoped<IApplicationUserRepository, EFApplicationUserRepository>();
+    assemblies.Add(typeof(UserRegisterServices).Assembly);
     return services;
   }
 }

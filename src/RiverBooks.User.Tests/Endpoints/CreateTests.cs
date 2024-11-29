@@ -3,6 +3,7 @@ using FastEndpoints.Testing;
 using FluentAssertions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using RiverBooks.User.Data;
 using RiverBooks.User.UserEndpoints;
 using RiverBooks.USer.Tests.Endpoints;
 
@@ -14,7 +15,7 @@ public class CreateTests(Fixture fixture) : TestBase<Fixture>
   public async Task CreateUser_SuccessAsync()
   {
     // Arrange
-    var userManager = fixture.Services.GetRequiredService<UserManager<IdentityUser>>();
+    var userManager = fixture.Services.GetRequiredService<UserManager<ApplicationUser>>();
     var existingUser = await userManager.FindByNameAsync("testuser");
     if (existingUser != null)
     {
@@ -38,8 +39,8 @@ public class CreateTests(Fixture fixture) : TestBase<Fixture>
   public async Task CreateUser_Failure_UserAlreadyExistsAsync()
   {
     // Arrange
-    var userManager = fixture.Services.GetRequiredService<UserManager<IdentityUser>>();
-    var existingUser = new IdentityUser { UserName = "existinguser", Email = "existinguser@example.com" };
+    var userManager = fixture.Services.GetRequiredService<UserManager<ApplicationUser>>();
+    var existingUser = new ApplicationUser { UserName = "existinguser", Email = "existinguser@example.com" };
     await userManager.CreateAsync(existingUser, "Password123!");
 
     var request = new CreateUserRequest("existinguser", "existinguser@example.com", "Password123!", "User");

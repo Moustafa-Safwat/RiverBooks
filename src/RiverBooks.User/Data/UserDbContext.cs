@@ -6,8 +6,8 @@ namespace RiverBooks.User.Data;
 /// <summary>
 /// Represents the database context for user-related data, inheriting from IdentityDbContext.
 /// </summary>
-public sealed class UserDbContext(DbContextOptions<UserDbContext> options)
-  : IdentityDbContext(options)
+internal sealed class UserDbContext(DbContextOptions<UserDbContext> options)
+  : IdentityDbContext<ApplicationUser>(options)
 {
 
   /// <summary>

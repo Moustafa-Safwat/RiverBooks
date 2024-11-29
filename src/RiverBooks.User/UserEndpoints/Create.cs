@@ -5,7 +5,7 @@ using RiverBooks.User.Data;
 namespace RiverBooks.User.UserEndpoints;
 
 internal class Create(
-  UserManager<IdentityUser> userManager,
+  UserManager<ApplicationUser> userManager,
   RoleManager<IdentityRole> roleManager,
   IUnitOfWork unitOfWork
   )
@@ -19,7 +19,7 @@ internal class Create(
 
   public override async Task HandleAsync(CreateUserRequest req, CancellationToken ct)
   {
-    var user = new IdentityUser
+    var user = new ApplicationUser
     {
       UserName = req.UserName,
       Email = req.Email,

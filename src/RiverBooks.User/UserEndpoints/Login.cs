@@ -2,11 +2,12 @@
 using FastEndpoints;
 using FastEndpoints.Security;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.Data;
-using Microsoft.Win32.SafeHandles;
+using Microsoft.Extensions.Configuration;
+using RiverBooks.User.Data;
 
 namespace RiverBooks.User.UserEndpoints;
-internal class Login(UserManager<IdentityUser> userManager)
+internal class Login(UserManager<ApplicationUser> userManager
+  ,IConfiguration configuration)
   : Endpoint<UserLoginRequest, TokenDto>
 {
   public override void Configure()
@@ -32,7 +33,7 @@ internal class Login(UserManager<IdentityUser> userManager)
     }
 
     var userRole = await userManager.GetRolesAsync(user);
-    
+
     var jwtSecret = Config["Auth:JwtSecret"];
     var claims = new List<Claim>
     {
@@ -45,7 +46,7 @@ internal class Login(UserManager<IdentityUser> userManager)
     {
       options.SigningKey = jwtSecret!;
       options.ExpireAt = DateTime.Now.AddMinutes(15);
-      options.Issuer = "RiverBooks";
+      options.Issuer = configuration["Issuer"];
       options.User.Claims.AddRange(claims);
       options.User.Roles.AddRange(userRole);
     });
