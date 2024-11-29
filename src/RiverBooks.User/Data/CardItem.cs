@@ -36,9 +36,8 @@ internal class CardItem
   /// </summary>
   public ApplicationUser User { get; private set; } = null!;
 
-  public CardItem(Guid id, Guid bookId, string description, decimal price, int count)
+  public CardItem(Guid bookId, string description, decimal price, int count)
   {
-    Id = Guard.Against.Default(id);
     BookId = Guard.Against.Default(bookId);
     Description = Guard.Against.NullOrEmpty(description);
     Price = Guard.Against.Negative(price);

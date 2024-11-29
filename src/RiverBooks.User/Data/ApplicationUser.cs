@@ -17,8 +17,8 @@ internal class ApplicationUser : IdentityUser
     if (existingBook != null)
     {
       existingBook.UpdateQuantity(existingBook.Quantity + item.Quantity);
-      existingBook.UpdateDescription(item.Description);
-      existingBook.UpdatePrice(item.Price);
+      existingBook.UpdateDescription(item.Description); // to update any change in description
+      existingBook.UpdatePrice(item.Price); // to update any change in price
       return;
     }
     _cardItems.Add(item);

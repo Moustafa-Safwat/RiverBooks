@@ -83,12 +83,25 @@ Content-Type: application/json
 
 ###
 
-@token =eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGVzdF9Vc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiVGVzdF9Vc2VyQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiZXhwIjoxNzMyODg2MjM4LCJpYXQiOjE3MzI4ODUzMzgsIm5iZiI6MTczMjg4NTMzOH0.2LE0CvR7l8lFPW7CvoZRS-otggp_UxAMhjA4G83Skvs
+@token =eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGVzdF9Vc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiVGVzdF9Vc2VyQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiZXhwIjoxNzMyODkwNzY5LCJpYXQiOjE3MzI4ODk4NjksIm5iZiI6MTczMjg4OTg2OX0.azoYUUn7h_1PFbqeqRJKDWXZQamGTfCbSX-GiLYDPzI
 
 // Get List of CardItems
-GET {{baseUrl}}/cards
+GET {{baseUrl}}/card
 Accept: application/json
 Authorization: Bearer {{token}}
+
+###
+
+// Add Book to the CardList
+POST {{baseUrl}}/card
+Accept: text/plain
+Authorization: Bearer {{token}}
+content-Type: application/json
+
+{
+  "bookId": "a89f6cd7-4693-457b-9009-02205dbbfe45",
+  "quantity":3
+}
 
 ###
 

@@ -9,9 +9,9 @@ internal class GetList(ISender sender) : EndpointWithoutRequest<CardResponse>
 {
   public override void Configure()
   {
-    Get("/cards");
+    Get("/card");
     Claims(ClaimTypes.Email);
-    Roles("User","Admin");
+    Roles("User", "Admin");
   }
 
   public override async Task HandleAsync(CancellationToken ct)
