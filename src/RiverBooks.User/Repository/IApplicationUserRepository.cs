@@ -5,5 +5,6 @@ namespace RiverBooks.User.Repository;
 internal interface IApplicationUserRepository
 {
   Task<ApplicationUser?> GetApplicationUSerByEmailAsync(string email, CancellationToken cancellationToken);
+  Task<ApplicationUser?> GetApplicationUserWithAddressByEmailAsync(string email, CancellationToken cancellationToken);
   Task SaveChangesAsync(CancellationToken cancellationToken);
 }

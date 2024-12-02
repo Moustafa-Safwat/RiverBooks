@@ -15,6 +15,13 @@ internal class EFApplicationUserRepository(
 
   }
 
+  public async Task<ApplicationUser?> GetApplicationUserWithAddressByEmailAsync(string email, CancellationToken cancellationToken)
+  {
+    return await dbContext.Users
+      .Include(user => user.UserStreetAddresses)
+      .FirstOrDefaultAsync(user => user.Email == email, cancellationToken);
+  }
+
   public async Task SaveChangesAsync(CancellationToken cancellationToken)
   {
     await dbContext.SaveChangesAsync(cancellationToken);

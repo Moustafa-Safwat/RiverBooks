@@ -83,7 +83,7 @@ Content-Type: application/json
 
 ###
 
-@token =eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGVzdF9Vc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiVGVzdF9Vc2VyQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNTM1OGQ3YzgtZWEwZS00MGJlLThkYzEtMGU1YmE5ZmE4MTQzIiwicm9sZSI6IlVzZXIiLCJleHAiOjE3MzMxNjkyOTIsImlhdCI6MTczMzE2ODM5MiwibmJmIjoxNzMzMTY4MzkyfQ.cws0-Zmr3vhPr79AAsxTCfhTTAzWk9oObHxaaPB2Gz8
+@token =eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGVzdF9Vc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiVGVzdF9Vc2VyQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNTM1OGQ3YzgtZWEwZS00MGJlLThkYzEtMGU1YmE5ZmE4MTQzIiwicm9sZSI6IlVzZXIiLCJleHAiOjE3MzMxODAzMDksImlhdCI6MTczMzE3OTQwOSwibmJmIjoxNzMzMTc5NDA5fQ.PCCSKTSRL0iSGM2xuOpmXvPyIvK8wNcfQ7cnuJci8SQ
 
 // Get List of CardItems
 GET {{baseUrl}}/card
@@ -126,5 +126,28 @@ content-Type: application/json
   "shippingAddressId":"a89f6cd7-4693-457b-9009-02205dbbfe45",
   "billingAddressId":"a89f6cd7-4693-457b-9009-02205dbbfe45"
 }
+
+###
+
+// Add Address For User
+POST {{baseUrl}}/user/address
+Authorization: Bearer {{token}}
+content-Type: application/json
+
+{
+  "AddressLine1":"Dummy_Data",
+  "AddressLine2":"Dummy_Data",
+  "City":"Dummy_Data",
+  "State":"Dummy_Data",
+  "PostalCode":"Dummy_Data",
+  "Country":"Dummy_Data"
+}
+
+###
+
+// Retrive Address For User
+GET {{baseUrl}}/user/address
+Authorization: Bearer {{token}}
+content-Type: application/json
 
 ###

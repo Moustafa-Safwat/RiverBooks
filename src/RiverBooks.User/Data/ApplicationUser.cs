@@ -7,8 +7,10 @@ internal class ApplicationUser : IdentityUser
 {
   public string FullName { get; private set; } = string.Empty;
   private readonly IList<CardItem> _cardItems = [];
+  private readonly IList<UserStreetAddress> _userStreetAddresses = [];
   // Navigation Property
   public IReadOnlyCollection<CardItem> CardItems => _cardItems.ToList();
+  public IReadOnlyCollection<UserStreetAddress> UserStreetAddresses => _userStreetAddresses.ToList();
 
   public void AddCardItem(CardItem item)
   {
@@ -27,5 +29,20 @@ internal class ApplicationUser : IdentityUser
   internal void ClearCart()
   {
     _cardItems.Clear();
+  }
+
+  internal UserStreetAddress AddAddress(Address address)
+  {
+    Guard.Against.Null(address);
+
+    var existingAddress = _userStreetAddresses.FirstOrDefault(usa => usa.StreetAddress == address);
+    if (existingAddress is not null)
+    {
+      return existingAddress;
+    }
+    var newAddress = new UserStreetAddress(Id, address);
+    _userStreetAddresses.Add(newAddress);
+
+    return newAddress;
   }
 }
