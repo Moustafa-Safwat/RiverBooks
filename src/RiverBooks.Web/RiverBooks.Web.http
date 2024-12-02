@@ -83,7 +83,7 @@ Content-Type: application/json
 
 ###
 
-@token =eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGVzdF9Vc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiVGVzdF9Vc2VyQGdtYWlsLmNvbSIsInJvbGUiOiJVc2VyIiwiZXhwIjoxNzMyODkwNzY5LCJpYXQiOjE3MzI4ODk4NjksIm5iZiI6MTczMjg4OTg2OX0.azoYUUn7h_1PFbqeqRJKDWXZQamGTfCbSX-GiLYDPzI
+@token =eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVGVzdF9Vc2VyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiVGVzdF9Vc2VyQGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNTM1OGQ3YzgtZWEwZS00MGJlLThkYzEtMGU1YmE5ZmE4MTQzIiwicm9sZSI6IlVzZXIiLCJleHAiOjE3MzMxNjkyOTIsImlhdCI6MTczMzE2ODM5MiwibmJmIjoxNzMzMTY4MzkyfQ.cws0-Zmr3vhPr79AAsxTCfhTTAzWk9oObHxaaPB2Gz8
 
 // Get List of CardItems
 GET {{baseUrl}}/card
@@ -105,3 +105,26 @@ content-Type: application/json
 
 ###
 
+// Get Orders List For User
+GET {{baseUrl}}/orders
+Authorization: Bearer {{token}}
+content-Type: application/json
+
+{
+  "pageNumber":1,
+  "pageSize":5
+}
+
+###
+
+// Add Order
+POST {{baseUrl}}/card/checkout
+Authorization: Bearer {{token}}
+content-Type: application/json
+
+{
+  "shippingAddressId":"a89f6cd7-4693-457b-9009-02205dbbfe45",
+  "billingAddressId":"a89f6cd7-4693-457b-9009-02205dbbfe45"
+}
+
+###

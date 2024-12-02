@@ -7,7 +7,7 @@ using RiverBooks.User.Data;
 
 namespace RiverBooks.User.UserEndpoints;
 internal class Login(UserManager<ApplicationUser> userManager
-  ,IConfiguration configuration)
+  , IConfiguration configuration)
   : Endpoint<UserLoginRequest, TokenDto>
 {
   public override void Configure()
@@ -39,6 +39,7 @@ internal class Login(UserManager<ApplicationUser> userManager
     {
         new Claim(ClaimTypes.Name, user.UserName!),
         new Claim(ClaimTypes.Email, user.Email!),
+        new Claim(ClaimTypes.NameIdentifier, user.Id!),
         // Add more claims as needed
     };
 

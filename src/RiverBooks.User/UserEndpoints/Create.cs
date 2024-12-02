@@ -31,7 +31,7 @@ internal class Create(
       {
         // Ensure the role exists before adding the user to the role
         if (await roleManager.RoleExistsAsync(req.Role))
-        { 
+        {
           var result = await userManager.CreateAsync(user, req.Password);
           if (!result.Succeeded)
           {

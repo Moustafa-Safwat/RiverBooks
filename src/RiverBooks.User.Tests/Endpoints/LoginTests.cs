@@ -26,7 +26,7 @@ public class LoginTests(Fixture fixture) : TestBase<Fixture>
         var request = new UserLoginRequest("loginuser@example.com", "Password123!");
 
         // Act
-        var result = await fixture.Client.POSTAsync<UserEndpoints.Login, UserLoginRequest, TokenDto>(request);
+        var result = await fixture.Client.POSTAsync<Login, UserLoginRequest, TokenDto>(request);
 
         // Assert
         result.Response.EnsureSuccessStatusCode();
@@ -50,7 +50,7 @@ public class LoginTests(Fixture fixture) : TestBase<Fixture>
         var request = new UserLoginRequest("loginuser@example.com", "WrongPassword!");
 
         // Act
-        var result = await fixture.Client.POSTAsync<UserEndpoints.Login, UserLoginRequest, object>(request);
+        var result = await fixture.Client.POSTAsync<Login, UserLoginRequest, object>(request);
 
         // Assert
         result.Response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
@@ -63,7 +63,7 @@ public class LoginTests(Fixture fixture) : TestBase<Fixture>
         var request = new UserLoginRequest("nonexistentuser@example.com", "Password123!");
 
         // Act
-        var result = await fixture.Client.POSTAsync<UserEndpoints.Login, UserLoginRequest, object>(request);
+        var result = await fixture.Client.POSTAsync<Login, UserLoginRequest, object>(request);
 
         // Assert
         result.Response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);

@@ -3,7 +3,7 @@ using MediatR;
 using RiverBooks.User.Dto;
 using RiverBooks.User.Repository;
 
-namespace RiverBooks.User.UseCases;
+namespace RiverBooks.User.UseCases.Card.ListItems;
 
 // this handelrar is responsible for get the email address of the user and return the list of cards for this user
 internal class ListItemCardQueryHandler(

@@ -3,6 +3,7 @@ using Ardalis.Result;
 using FastEndpoints;
 using MediatR;
 using RiverBooks.User.UseCases;
+using RiverBooks.User.UseCases.Card.AddItem;
 
 namespace RiverBooks.User.CardEndpoints;
 internal class AddCardItem(ISender sender)

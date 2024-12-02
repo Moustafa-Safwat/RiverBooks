@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.IdentityModel.Tokens;
 using RiverBooks.Book.Configurations;
+using RiverBooks.Orderprocessing.Configurations;
 using RiverBooks.User.Configurations;
 using Serilog;
 
@@ -19,6 +20,7 @@ IList<Assembly> assemblies = [typeof(Program).Assembly];
 // Register Books Services
 builder.Services.RegisterBookServices(builder.Configuration, assemblies)
                 .RegisterUserServices(builder.Configuration, assemblies)
+                .RegisterOrderprocessingrServices(builder.Configuration, assemblies)
                 .AddAuthenticationJwtBearer(options =>
                 {
                   options.SigningKey = builder.Configuration["Auth:JwtSecret"];
@@ -55,7 +57,7 @@ if (app.Environment.EnvironmentName == "Testing")
   // To can access the user secrets in the test environment, you need to add the following line to the Program.cs file.
   builder.Configuration.AddUserSecrets<Program>();
 }
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseAuthentication()
   .UseAuthorization();
 

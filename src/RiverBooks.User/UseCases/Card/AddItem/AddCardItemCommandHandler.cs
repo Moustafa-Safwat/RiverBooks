@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using RiverBooks.Books.Contracts.Queries;
 using RiverBooks.User.Repository;
 
-namespace RiverBooks.User.UseCases;
+namespace RiverBooks.User.UseCases.Card.AddItem;
 internal class AddCardItemCommandHandler(
   IApplicationUserRepository applicationUserRepository,
   ISender sender
@@ -26,7 +26,7 @@ internal class AddCardItemCommandHandler(
       return Result.NotFound();
     }
     var bookDetails = book.Value;
-    string description = $"{bookDetails.Title} by {bookDetails.Author}";
+    var description = $"{bookDetails.Title} by {bookDetails.Author}";
 
     user.AddCardItem(new Data.CardItem(bookDetails.BookId, description, bookDetails.UnitPrice, request.Quantity));
     await applicationUserRepository.SaveChangesAsync(cancellationToken);

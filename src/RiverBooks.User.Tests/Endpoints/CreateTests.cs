@@ -25,7 +25,7 @@ public class CreateTests(Fixture fixture) : TestBase<Fixture>
     var request = new CreateUserRequest("testuser", "testuser@example.com", "Password123!", "User");
 
     // Act
-    var result = await fixture.Client.POSTAsync<UserEndpoints.Create, CreateUserRequest, object>(request);
+    var result = await fixture.Client.POSTAsync<Create, CreateUserRequest, object>(request);
     var user = await userManager.FindByNameAsync(request.UserName);
 
     // Assert
@@ -46,7 +46,7 @@ public class CreateTests(Fixture fixture) : TestBase<Fixture>
     var request = new CreateUserRequest("existinguser", "existinguser@example.com", "Password123!", "User");
 
     // Act
-    var result = await fixture.Client.POSTAsync<UserEndpoints.Create, CreateUserRequest, object>(request);
+    var result = await fixture.Client.POSTAsync<Create, CreateUserRequest, object>(request);
 
     // Assert
     result.Response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);
@@ -59,7 +59,7 @@ public class CreateTests(Fixture fixture) : TestBase<Fixture>
     var request = new CreateUserRequest("newuser", "newuser@example.com", "Password123!", "InvalidRole");
 
     // Act
-    var result = await fixture.Client.POSTAsync<UserEndpoints.Create, CreateUserRequest, object>(request);
+    var result = await fixture.Client.POSTAsync<Create, CreateUserRequest, object>(request);
 
     // Assert
     result.Response.StatusCode.Should().Be(System.Net.HttpStatusCode.BadRequest);

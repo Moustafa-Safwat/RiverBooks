@@ -3,6 +3,7 @@ using Ardalis.Result;
 using FastEndpoints;
 using MediatR;
 using RiverBooks.User.UseCases;
+using RiverBooks.User.UseCases.Card.ListItems;
 
 namespace RiverBooks.User.CardEndpoints;
 internal class GetList(ISender sender) : EndpointWithoutRequest<CardResponse>
